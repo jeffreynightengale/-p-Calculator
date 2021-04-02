@@ -21,11 +21,11 @@ namespace Calculator
 
             if (calculate.ToLower() == "addition")
             {
-                calculate = Add(firstNumber, secondNumber);
+                 Add(v1, v2);
             }
             else if (calculate.ToLower() == "subtraction")
             {
-
+                
             }
             else if (calculate.ToLower() == "multiplication")
             {
@@ -41,7 +41,7 @@ namespace Calculator
             }
         }
 
-        static double Add(double v1, double v2) //always declare vvariables in parenthesis
+        static double Add(double v1, double v2) //always declare variables in parenthesis
         {
             double sum = v1 + v2;
             return sum;
@@ -55,13 +55,13 @@ namespace Calculator
             return sum;
         }
 
-        static double Mutliplication(double v1, double v2)
+        static double Mutliply(double v1, double v2)
         {
             double sum = v1 * v2;
             return sum;
         }
 
-        static double Division(double v1, double v2)
+        static double Divide(double v1, double v2)
         {
             double sum = v1 / v2;
             return sum;
