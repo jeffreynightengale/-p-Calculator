@@ -7,9 +7,6 @@ namespace Calculator
         static void Main(string[] args)
         {
             DeveloperInformation("", "", "");
-
-            string final;
-            
                 Console.WriteLine($"What type of calculation would you like to use? (Addition, Subtratcion, Multiplication, or Division) >>");
                 string calculate = Console.ReadLine();
 
@@ -20,39 +17,29 @@ namespace Calculator
                 Console.WriteLine($"What is your second number? >>");
                 string secondNumber = Console.ReadLine();
                 double v2 = Convert.ToDouble(secondNumber);
-
+            string final;
+            
+            do
+            {
                 double answer = 0;
                 if (calculate.ToLower() == "addition")
                 {
                     answer = Add(v1, v2);
-
-                    Console.WriteLine($"Your answer is {answer}");
                 }
                 else if (calculate.ToLower() == "subtraction")
                 {
                     answer = Subtract(v1, v2);
-
-                    Console.WriteLine($"Your answer is {answer}");
                 }
                 else if (calculate.ToLower() == "multiplication")
                 {
                     answer = Mutliply(v1, v2);
-
-                    Console.WriteLine($"Your answer is {answer}");
                 }
                 else if (calculate.ToLower() == "division")
                 {
                     answer = Divide(v1, v2);
-
-                    Console.WriteLine($"Your answer is {answer}");
                 }
-                else
-                {
-                    Console.WriteLine("Please insert Addition, Subtraction, Multiplication, or Division.");
-                }
+                Console.WriteLine($"Your answer is {answer}");
 
-            do
-            {
                 Console.WriteLine($"Do you want to do another calculation");
                 final = Console.ReadLine();
                 if (final.ToLower()[0] == 'n')
@@ -67,13 +54,12 @@ namespace Calculator
                 {
                     Console.WriteLine($"What type of calculation would you like to use? (Addition, Subtratcion, Multiplication, or Division) >>");
                     calculate = Console.ReadLine();
-                    v1 = answer;
 
+                    v1 = answer;
                     Console.WriteLine($"What is your second number? >>");
                     secondNumber = Console.ReadLine();
                     v2 = Convert.ToDouble(secondNumber);
 
-                    Console.WriteLine($"Your new answer is {answer}");
                 }
                 else
                 {
@@ -87,11 +73,8 @@ namespace Calculator
                     Console.WriteLine($"What is your second number? >>");
                     secondNumber = Console.ReadLine();
                     v2 = Convert.ToDouble(secondNumber);
-
-                    Console.WriteLine($"Your new answer is {answer}");
                 }
-            while (final.ToLower()[0] == 'y');
-            } while (true);
+            }while (final.ToLower()[0] == 'y');
 
         }
         /// <summary>
